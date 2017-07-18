@@ -15,6 +15,7 @@
 		32EEA2F01F1EB03700E5EE50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EEA2EE1F1EB03700E5EE50 /* LaunchScreen.storyboard */; };
 		32EEA2FB1F1EB03700E5EE50 /* CoreNFCExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EEA2FA1F1EB03700E5EE50 /* CoreNFCExampleTests.swift */; };
 		32EEA3061F1EB03700E5EE50 /* CoreNFCExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EEA3051F1EB03700E5EE50 /* CoreNFCExampleUITests.swift */; };
+		32EEA3151F1EB39B00E5EE50 /* NFCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EEA3141F1EB39B00E5EE50 /* NFCHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		32EEA3011F1EB03700E5EE50 /* CoreNFCExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreNFCExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32EEA3051F1EB03700E5EE50 /* CoreNFCExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNFCExampleUITests.swift; sourceTree = "<group>"; };
 		32EEA3071F1EB03700E5EE50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32EEA3131F1EB2AD00E5EE50 /* CoreNFCExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreNFCExample.entitlements; sourceTree = "<group>"; };
+		32EEA3141F1EB39B00E5EE50 /* NFCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 		32EEA2E11F1EB03700E5EE50 /* CoreNFCExample */ = {
 			isa = PBXGroup;
 			children = (
+				32EEA3131F1EB2AD00E5EE50 /* CoreNFCExample.entitlements */,
 				32EEA2E21F1EB03700E5EE50 /* AppDelegate.swift */,
 				32EEA2E41F1EB03700E5EE50 /* ViewController.swift */,
 				32EEA2E61F1EB03700E5EE50 /* Main.storyboard */,
@@ -106,6 +110,7 @@
 				32EEA2EE1F1EB03700E5EE50 /* LaunchScreen.storyboard */,
 				32EEA2F11F1EB03700E5EE50 /* Info.plist */,
 				32EEA2E91F1EB03700E5EE50 /* CoreNFCExample.xcdatamodeld */,
+				32EEA3141F1EB39B00E5EE50 /* NFCHelper.swift */,
 			);
 			path = CoreNFCExample;
 			sourceTree = "<group>";
@@ -196,13 +201,21 @@
 				TargetAttributes = {
 					32EEA2DE1F1EB03700E5EE50 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 					32EEA2F51F1EB03700E5EE50 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						TestTargetID = 32EEA2DE1F1EB03700E5EE50;
 					};
 					32EEA3001F1EB03700E5EE50 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						TestTargetID = 32EEA2DE1F1EB03700E5EE50;
 					};
 				};
@@ -260,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32EEA2E51F1EB03700E5EE50 /* ViewController.swift in Sources */,
+				32EEA3151F1EB39B00E5EE50 /* NFCHelper.swift in Sources */,
 				32EEA2EB1F1EB03700E5EE50 /* CoreNFCExample.xcdatamodeld in Sources */,
 				32EEA2E31F1EB03700E5EE50 /* AppDelegate.swift in Sources */,
 			);
@@ -427,11 +441,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoreNFCExample/CoreNFCExample.entitlements;
 				DEVELOPMENT_TEAM = 6YLUVRFYC2;
 				INFOPLIST_FILE = CoreNFCExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.appworks.CoreNFCExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,11 +457,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoreNFCExample/CoreNFCExample.entitlements;
 				DEVELOPMENT_TEAM = 6YLUVRFYC2;
 				INFOPLIST_FILE = CoreNFCExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.appworks.CoreNFCExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,6 +479,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.appworks.CoreNFCExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreNFCExample.app/CoreNFCExample";
@@ -477,6 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.appworks.CoreNFCExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreNFCExample.app/CoreNFCExample";
@@ -492,6 +512,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.appworks.CoreNFCExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CoreNFCExample;
@@ -507,6 +528,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.appworks.CoreNFCExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CoreNFCExample;
